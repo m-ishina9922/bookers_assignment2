@@ -20,11 +20,15 @@
   box-sizing: border-box;
 }
 
+h2{
+  padding-bottom: 5px;
+}
 
 
 body{
   margin:33px;
   font-family: Verdana;
+  font-size: 13px;
 }
 
 .title{
@@ -49,10 +53,6 @@ th{
   margin-bottom:10px;
 }
 
-table{
-  margin: 10px;
-}
-
 tr{
   display: table-row;
   font-size:13px;
@@ -69,20 +69,40 @@ td{
   width: 180px;
 }
 
-a{
+table a, .link-btn a{
   color: black;
+  font-size: 13px;
 }
 
-a:hover{
+table a:hover, .link-btn :hover{
   background-color: black;
   color: white;
 }
 
-.new-book{
-  margin: 10px;
+p{
+  margin-top: 5px;
+  font-size: 13px;
 }
 
 .new-book-title, .new-book-body, .new-book-submit{
-  margin-top: 10px;
+  display: block;
   font-size: 13px;
 }
+
+.new-book-submit{
+  margin-bottom: 10px;
+}
+
+.book-detail p{
+  display: block;
+  text-indent: -3.5em;
+  padding-left: 79px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+
+
+
+
+

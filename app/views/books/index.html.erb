@@ -1,4 +1,5 @@
-<h2>Books</h2>
+<body>
+<h1>Books</h1>
 
 <table>
   <tr><th>Title</th><th>Body</th></tr>
@@ -8,9 +9,9 @@
   <tr>
   <td class="table-title"><%= book.title %></td>
   <td><%= book.body %></td>
-  <td><a class="link"><%= link_to "Show" , book_path(book.id) %></a></td>
-  <td><a class="link"><%= link_to "Edit" , edit_book_path(book.id) %></a></td>
-  <td><a class="link"><%= link_to "Destroy" , book_path(book.id), method: :delete , "data-confirm" => "Are you sure?" %></a></td>
+  <td><a><%= link_to "Show" , book_path(book.id) %></a></td>
+  <td><a><%= link_to "Edit" , edit_book_path(book.id) %></a></td>
+  <td><a><%= link_to "Destroy" , book_path(book.id), method: :delete , "data-confirm" => "Are you sure?" %></a></td>
   </tr>
 
   <% end %>
@@ -18,7 +19,7 @@
 
 <div class="new-book">
 
-<h3>New book</h3>
+<h2>New book</h2>
   
   <% if @book.errors.any? %>
    <%= @book.errors.count %>error has occurred
@@ -33,14 +34,15 @@
 
   <%= form_with model: Book.new do |f| %>
 
-  <p class="new-book-title">Title<p>
-   <%= f.text_field :title %>
+  <p>Title<p>
+    <a class="new-book-title"><%= f.text_field :title %></a>
 
-  <p class="new-book-body">Body</p>
-   <%= f.text_area :body %>
+  <p>Body<p>
+    <a class="new-book-body"><%= f.text_area :body %></a>
 
   <p class="new-book-submit"><%= f.submit 'Create Book' %></p>
 
    <% end %>
  
 </div>
+</body>

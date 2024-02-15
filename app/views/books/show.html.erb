@@ -1,8 +1,18 @@
-<p><strong>Title: </strong><%= @book.title %></p>
+<body>
 
-<p><strong>Body: </strong><%= @book.body %></p>
+<div class="book-detail">
+ <p><strong>Title: </strong><%= @book.title %></p>
 
-<%= link_to "Edit" , edit_book_path(@book.id) %>
-|
+ <p><strong>Body: </strong><%= @book.body %></p>
 
-<%= link_to "Back" , "/books" %>
+</div>
+
+<div class="link-btn">
+ <a><%= link_to "Edit" , edit_book_path(@book.id) %></a>
+ <a>|<a>
+
+ <a><%= link_to "Back" , "/books" %></a>
+
+</div>
+
+</body>
