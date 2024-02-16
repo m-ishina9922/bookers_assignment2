@@ -12,7 +12,7 @@ class BooksController < ApplicationController
      @books=Book.all
      flash[:alert] = "It didn't go successfully..."
      render :index
-   end
+    end
 
   end
 
@@ -35,16 +35,22 @@ class BooksController < ApplicationController
       flash[:success] = "The update was successfully!!"
       redirect_to book_path(book.id)
     else
-      
+
       flash[:alert] = "It didn't go successfully..."
       redirect_to edit_book_path(book.id)
-    end 
+    end
   end
 
   def destroy
     book=Book.find(params[:id])
-    book.destroy
-    redirect_to '/books'
+    if book.destroy
+      flash[:destroy] = "The deletion was successfully!!"
+      redirect_to '/books'
+    else
+      flash[:alert] =  "It didn't go successfully..."
+      redirect_to '/books'
+    end
+
   end
 
   private

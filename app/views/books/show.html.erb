@@ -3,15 +3,15 @@
 <div class="book-detail">
  <p><strong>Title: </strong><%= @book.title %></p>
 
+
  <p><strong>Body: </strong><%= @book.body %></p>
 
 </div>
 
 <div class="link-btn">
- <a><%= link_to "Edit" , edit_book_path(@book.id) %></a>
- <a>|<a>
-
- <a><%= link_to "Back" , "/books" %></a>
+ <%= link_to "Edit" , edit_book_path(@book) %>
+ |
+ <%= link_to "Back", "/books" %>
 
 </div>
 

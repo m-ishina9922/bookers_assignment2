@@ -3,7 +3,7 @@ require 'rails_helper'
 describe '投稿のテスト' do
   let!(:book) { create(:book,title:'hoge',body:'body') }
   describe 'トップ画面(root_path)のテスト' do
-    before do 
+    before do
       visit root_path
     end
     context '表示の確認' do
@@ -108,7 +108,7 @@ describe '投稿のテスト' do
       it 'Backリンクが表示される', spec_category: "ビューページでの適切な遷移先設定" do
         back_link = find_all('a')[1]
         expect(back_link.native.inner_text).to match(/back/i)
-			end  
+			end
     end
     context 'リンクの遷移先の確認' do
       it 'Editの遷移先は編集画面か', spec_category: "ルーティング・URL設定の理解" do
@@ -138,11 +138,11 @@ describe '投稿のテスト' do
       it 'Showリンクが表示される', spec_category: "CRUD機能に対するコントローラーの処理と流れ" do
         show_link = find_all('a')[0]
         expect(show_link.native.inner_text).to match(/show/i)
-			end  
+			end
       it 'Backリンクが表示される', spec_category: "CRUD機能に対するコントローラーの処理と流れ" do
         back_link = find_all('a')[1]
         expect(back_link.native.inner_text).to match(/back/i)
-			end  
+			end
     end
     context 'リンクの遷移先の確認' do
       it 'Showの遷移先は詳細画面か', spec_category: "ルーティング・URL設定の理解" do
